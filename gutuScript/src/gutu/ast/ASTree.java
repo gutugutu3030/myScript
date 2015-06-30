@@ -1,10 +1,15 @@
 package gutu.ast;
 
-public class ASTree {
+import java.util.Iterator;
 
-	public String location() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+public abstract class ASTree implements Iterable<ASTree>{
+
+	public abstract ASTree chile(int i);
+	public abstract int numChildren();
+	public abstract Iterator<ASTree> children();
+	public abstract String location();
+	public Iterator<ASTree> iterator(){
+		return children();
 	}
 
 }
